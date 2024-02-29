@@ -3,18 +3,18 @@ const Layout = require('./Layout');
 const FormAddPhoto = require('./FormAddPhoto');
 const PhotoItem = require('./PhotoItem');
 
-function PhotoPage({ title, albums, photos , user, url }) {
+function PhotoPage({ title, user, url, album, photos }) {
+  // console.log(photos);
   return (
-    <Layout title={title} user={user} url={url}>
+    <Layout title={title} user={user} url={url} photos={photos}>
       <h1>This is the photo page!</h1>
       <h3>Add your photo</h3>
-      {user && <FormAddPhoto />}
+      {user && <FormAddPhoto album = {album}/>}
       <div className="photoItem">
         {photos.map((photo) => (
-          <PhotoItem photo={photo} user={user} />
+          <PhotoItem photo={photo} user={user} album={album} />
         ))}
       </div>
-
     </Layout>
   );
 }

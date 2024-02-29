@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
       title: 'Albums',
       url: baseUrl,
     });
+    // console.log(album);
     res.status(200).send(html);
   } catch ({ message }) {
     res.send(message);
@@ -23,12 +24,12 @@ router.get('/:id/photo', async (req, res) => {
   try {
     const { id } = req.params;
     const album = await Album.findOne({ where: { id } });
-    const photos = await Photo.findAll({ where: { albumId: album.id } });
-    const albums = await Album.findAll();
+    const photos = await Photo.findAll({ where: { albumId: id } });
+    // console.log(photos);
     const html = res.renderComponent(PhotoPage, {
+      album,
       photos,
-      albums,
-      title: `${photos.description}Photos`,
+      title: 'HUI',
     });
     res.status(200).send(html);
   } catch ({ message }) {
