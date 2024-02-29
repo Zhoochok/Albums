@@ -1,8 +1,9 @@
 const router = require('express').Router();
 
+const AlbumItem = require('../../components/AlbumItem');
 const { Album } = require('../../db/models');
 
-const AlbumItem = require('../../components/AlbumPage');
+// const AlbumItem = require('../../components/AlbumPage');
 
 router.post('/', async (req, res) => {
   try {
@@ -13,11 +14,11 @@ router.post('/', async (req, res) => {
       name,
       private: privats,
     };
-    const album = await Album.create(data);
-    if (album) {
+    const el = await Album.create(data);
+    if (el) {
       const html = res.renderComponent(
         AlbumItem,
-        { album },
+        { el },
         { doctype: false }
       );
       res.status(201).json({ message: 'success', html });
