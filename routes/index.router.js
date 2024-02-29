@@ -5,6 +5,7 @@ const mainRouter = require('./views/main.router');
 const photoView = require('./views/photo.view');
 const authView = require('./views/auth.view');
 const albumsRouter = require("./views/album.router")
+const incorrectRouter = require('./views/incorrect.view')
 
 
 // //Api
@@ -22,4 +23,6 @@ router.use('/api/photos', photoApiRouter)
 router.use('/auth', authView);
 router.use('/api/auth', authApi);
 
+
+router.use('*', incorrectRouter)
 module.exports = router;

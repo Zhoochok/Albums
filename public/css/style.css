@@ -1,7 +1,38 @@
+html{
+  background: rgb(238,174,202);
+background: linear-gradient(77deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.center-container {
+  background-color: rgba(240, 217, 217, 0.336);
+  padding: 3rem;
+  margin-left: 9rem; 
+  margin-right: 9rem;
+}
+
+/*кнопки добавления*/
 .album-form {
   display: none; 
 }
 
 .photo-form{
   display:none;
+}
+
+
+/*404*/
+.incorrect {
+  text-align: center;
+}
+
+h1 {
+  font-size: 8rem;
+  color: #cc4343; 
+  margin-bottom: 2rem; 
+  margin-top: 11rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: #333; 
 }
