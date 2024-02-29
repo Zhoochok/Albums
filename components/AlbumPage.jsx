@@ -4,6 +4,7 @@ const Layout = require('./Layout');
 module.exports = function Album({ title, album, url }) {
   return (
     <Layout title={title} url={url}>
+
       <div className="albumPage">
         {album.map((el) => (
           <a href={`/albums/${el.name}/photo`}>
