@@ -1,9 +1,10 @@
-const React = require("react");
-const Layout = require("./Layout");
+const React = require('react');
+const Layout = require('./Layout');
 
-module.exports = function Album({ title, album}) {
+module.exports = function Album({ title, album, url }) {
   return (
-    <Layout title={title}>
+    <Layout title={title} url={url}>
+
       <div className="albumPage">
         {album.map((el) => (
           <a href={`/albums/${el.name}/photo`}>

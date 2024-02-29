@@ -5,9 +5,10 @@ const PhotoPage = require('../../components/PhotoPage');
 
 router.get('/', async (req, res) => {
   try {
-    const user = res.app.locals.user;
+    const { baseUrl } = req;
+    // const user = res.app.locals.user;
     const photos = await Photo.findAll();
-    const document = res.renderComponent(PhotoPage, { photos, user });
+    const document = res.renderComponent(PhotoPage, { photos, url: baseUrl, });
     res.send(document);
   } catch ({ message }) {
     res.status(500).json({ error: message });
