@@ -3,9 +3,9 @@ const Layout = require('./Layout');
 const FormAddPhoto = require('./FormAddPhoto');
 const PhotoItem = require('./PhotoItem');
 
-function PhotoPage({ title, albums, photos , user }) {
+function PhotoPage({ title, albums, photos , user, url }) {
   return (
-    <Layout title={title} user={user}>
+    <Layout title={title} user={user} url={url}>
       <h1>This is the photo page!</h1>
       <h3>Add your photo</h3>
       {user && <FormAddPhoto />}

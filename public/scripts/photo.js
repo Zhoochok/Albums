@@ -31,7 +31,7 @@ if (formAddPhoto) {
         formAddPhoto.reset();
         document
           // находим див, куда хотим добавить карточку
-          .querySelector('.photoContainer')
+          .querySelector('.photoItem')
           // добавляет карточку в конец нашего дива, который мы нашли выше
           .insertAdjacentHTML('beforeend', res.html);
       }
