@@ -7,6 +7,7 @@ function PhotoPage({ title, user, url, album, photos }) {
   // console.log(photos);
   return (
     <Layout title={title} user={user} url={url} photos={photos}>
+      <div className="center-container">
       <h1>This is the photo page!</h1>
       <h3>Add your photo</h3>
       {user && <FormAddPhoto album = {album}/>}
@@ -14,6 +15,7 @@ function PhotoPage({ title, user, url, album, photos }) {
         {photos.map((photo) => (
           <PhotoItem photo={photo} user={user} album={album} />
         ))}
+      </div>
       </div>
     </Layout>
   );
