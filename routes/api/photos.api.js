@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const { Photo } = require('../../db/models');
 
-const PhoyoItem = require('../../components/BookItem');
+const PhotoItem = require('../../components/PhotoItem');
 
 
 router.post('/', async (req, res) => {
