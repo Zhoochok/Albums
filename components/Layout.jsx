@@ -11,6 +11,13 @@ function Layout({ title, children, user, url }) {
         <script defer src="/scripts/auth.js" />
         <script defer src="/scripts/album.js" />
         <script defer src="/scripts/photo.js" />
+        <script defer src="/scripts/addBtnAlbum.js" />
+        <script defer src="/scripts/addBtnPhoto.js" />
+
+        
+        <link rel="stylesheet" href="/css/style.css" />
+
+        
       </head>
       <body>
         <Navbar user={user} url={url} />
