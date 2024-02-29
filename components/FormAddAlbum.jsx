@@ -9,7 +9,7 @@ function FormAddAlbum() {
             <option value="true">Открытый</option>
             <option value="false">Закрытый</option>
           </select>
-      <button>Add photo</button>
+      <button>Add albums</button>
 
     </form>
   );

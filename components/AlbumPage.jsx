@@ -6,8 +6,8 @@ module.exports = function Album({
   title, album, user, url,
 }) {
   return (
-    <Layout title={title} url={url}>
-      {user && <FormAddAlbum />}
+    <Layout title={title} url={url} user={user}>
+    {user && <FormAddAlbum />}
       <div className="albumPage">
         {album.map((el) => (
           <a href={`/albums/${el.id}/photo`}>
