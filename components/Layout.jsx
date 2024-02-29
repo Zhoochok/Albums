@@ -1,7 +1,7 @@
 const React = require('react');
 const Navbar = require('./Navbar');
 
-function Layout({ title, children, user }) {
+function Layout({ title, children, user, url }) {
   return (
     <html lang="en">
       <head>
@@ -13,7 +13,7 @@ function Layout({ title, children, user }) {
         <script defer src="/scripts/photo.js" />
       </head>
       <body>
-        <Navbar user={user} />
+        <Navbar user={user} url={url} />
         {/* наши страницы */}
         {children}
       </body>

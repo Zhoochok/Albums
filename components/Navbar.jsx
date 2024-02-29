@@ -1,20 +1,31 @@
 const React = require('react');
 
-function Navbar({ user }) {
+function Navbar({ user, url }) {
+  // console.log(window.location.pathname);
+  console.log(url, '<--');
   return (
     <nav>
       <ul>
         <li>
-          <a href="/">Main</a>
+          <a href="/">MainPage</a>
         </li>
         <li>
-          <a href="/itemPage">ItemPage</a>
+          <a href="/albums">Albums</a>
         </li>
         {user ? (
           <>
             <li>
               <a>{user.name}</a>
             </li>
+            {url === '/albums' ? (
+              <li>
+                <button className='btn-addAlbum'>AddAlbum</button>
+              </li>
+            ) : (
+              <li>
+                <button className='btn-addPhoto'>AddPhoto</button>
+              </li>
+            )}
             <li>
               <a href="/api/auth/logout">logout</a>
             </li>
