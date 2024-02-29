@@ -9,6 +9,8 @@ function Layout({ title, children, user }) {
         {/* <link rel="stylesheet" href="/css/style.css" /> */}
         {/* ЗДЕСЬ ПОДКЛЮЧАЕМ СКРИПТЫ */}
         <script defer src="/scripts/auth.js" />
+        <script defer src="/scripts/album.js" />
+        <script defer src="/scripts/photo.js" />
       </head>
       <body>
         <Navbar user={user} />
