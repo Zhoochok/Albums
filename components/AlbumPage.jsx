@@ -6,7 +6,7 @@ const FormAddAlbum = require('./FormAddAlbum')
 
 module.exports = function Album({ title, album, user, url}) {
   return (
-    <Layout title={title} url={url}>
+    <Layout title={title} url={url} user={user}>
     {user && <FormAddAlbum />}
       <div className="albumPage">
         {album.map((el) => (
