@@ -9,13 +9,13 @@ if (formAddAlbum) {
       // event.target - цель события в виде obj
       // деструкоризацией из цели(форма) событий достаем наши инпуты
       const {
-      name, img, private
+      name, img, privats
       } = event.target;
   
       const data = {
         name: name.value,
         img: img.value,
-        private: private.value,
+        privats: privats.value,
 
       };
       // отправялем  феч
