@@ -2,7 +2,7 @@ const React = require('react');
 
 function Navbar({ user, url }) {
   // console.log(window.location.pathname);
-  console.log(url === '/albums', '<--');
+  // console.log(url === '/albums', '<--');
   return (
     <nav>
       <ul>

@@ -13,7 +13,6 @@ router.get('/', async (req, res) => {
       title: 'Albums',
       url: baseUrl,
     });
-    // console.log(album);
     res.status(200).send(html);
   } catch ({ message }) {
     res.send(message);
@@ -29,7 +28,7 @@ router.get('/:id/photo', async (req, res) => {
     const html = res.renderComponent(PhotoPage, {
       album,
       photos,
-      title: 'HUI',
+      title: 'Photo',
     });
     res.status(200).send(html);
   } catch ({ message }) {

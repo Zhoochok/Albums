@@ -8,13 +8,15 @@ const { Album, Photo } = require("../../db/models");
 router.post("/", async (req, res) => {
   try {
     const { img, name, privats } = req.body;
+    // console.log( res.locals.user.id);
     const data = {
-      userId: 1,
+      userId: res.locals.user.id,
       img,
       name,
       private: privats,
     };
     const el = await Album.create(data);
+    // console.log(el);
     if (el) {
       const html = res.renderComponent(AlbumItem, { el }, { doctype: false });
       res.status(201).json({ message: "success", html });
@@ -27,9 +29,7 @@ router.post("/", async (req, res) => {
 router.delete("/:albumId", async (req, res) => {
   try {
     const { albumId } = req.params;
-    console.log(albumId);
     const result = await Album.destroy({ where: {id: albumId } });
-    console.log(result);
     if (result > 0) {
       res.status(200).json({ message: "success" });
     }

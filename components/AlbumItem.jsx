@@ -1,7 +1,10 @@
 const React = require("react");
 
 module.exports = function AlbumItem({ title, album, user, url, el }) {
-  console.log(album, 111);
+  console.log(user);
+  console.log(album);
+  // console.log(el);
+
   return (
     <div className="albums" data-albumId={el.id}>
       <a href={`/albums/${el.id}/photo`}>
@@ -10,7 +13,7 @@ module.exports = function AlbumItem({ title, album, user, url, el }) {
         </p>
         {el.name}
       </a>
-      <button className="btn-deleteAlbum">Удалить</button>
+     {user && el.userId === user.id && <button className="btn-deleteAlbum">Удалить</button>}
     </div>
   );
 };

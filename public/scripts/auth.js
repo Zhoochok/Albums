@@ -15,7 +15,7 @@ if (regForm) {
         email: email.value,
         password: password.value,
       };
-      console.log(e.target);
+      // console.log(e.target);
       // отправили информацию с userom на сервер
       const res = await fetch('/api/auth/registration', {
         method: 'POST',
@@ -30,7 +30,7 @@ if (regForm) {
         return;
       }
     }
-    console.log('пароли не совпадают');
+    alert('пароли не совпадают');
   });
 }
 

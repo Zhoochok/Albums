@@ -6,7 +6,7 @@ const generateTokens = require('../../utils/authUtils');
 router.post('/registration', async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     let user;
     user = await User.findOne({ where: { email } });
     if (user) {
@@ -46,7 +46,7 @@ router.post('/authorization', async (req, res) => {
       return;
     }
     const isSame = await bcrypt.compare(password, user.password);
-    console.log(isSame)
+    // console.log(isSame)
     if (!isSame) {
       res.json({ message: 'Такого пользователя нет или пароль неверный' });
       return;
