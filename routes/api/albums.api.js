@@ -28,7 +28,8 @@ router.delete("/:albumId", async (req, res) => {
   try {
     const { albumId } = req.params;
     console.log(albumId);
-    const result = await Photo.destroy({ where: {id: albumId } });
+    const result = await Album.destroy({ where: {id: albumId } });
+    console.log(result);
     if (result > 0) {
       res.status(200).json({ message: "success" });
     }

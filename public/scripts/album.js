@@ -31,6 +31,7 @@ if (deleteAlbum) {
     if (event.target.classList.contains("btn-deleteAlbum")) {
       const card = event.target.closest(".albums");
       const { albumid } = card.dataset;
+      console.log(albumid);
       const res = await fetch(`/api/albums/${albumid}`, { method: "DELETE" });
       const data = await res.json();
       if (data.message === "success") {
