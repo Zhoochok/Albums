@@ -5,6 +5,12 @@ if (formAddPhoto) {
   formAddPhoto.addEventListener('submit', async (event) => {
     event.preventDefault();
     const { description, img } = event.target;
+
+    const formData = new FormData();
+
+    formData.append('img', img.files[0]);
+    formData.append('description', description.value);
+
     const { id } = event.target.dataset;
     const data = {
       description: description.value,
@@ -12,8 +18,8 @@ if (formAddPhoto) {
     };
     const response = await fetch(`/api/photos/add/${id}`, {
       method: 'POST',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(data),
+      body: formData,
+
     });
     const res = await response.json();
     if (res.message === 'success') {
