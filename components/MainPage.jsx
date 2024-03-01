@@ -1,16 +1,14 @@
-const React = require("react");
-const Layout = require("./Layout");
+const React = require('react');
+const Layout = require('./Layout');
 
-function MainPage({ title, user }) {
+function MainPage({ title, user, album }) {
   return (
-    <Layout title={title} user={user}>
+    <Layout title={title} user={user} album={album}>
       <div className="center-container">
-        <h1>WELCOME Дрозд</h1>
-        <img
-          src="https://i.pinimg.com/originals/05/29/71/0529711d950b3449cb7861c200c62e3c.gif"
-          width={600}
-          height={500}
-        ></img>
+        <h1 className="animate__animated animate__swing">
+          WELCOME
+          {user.name}
+        </h1>
       </div>
     </Layout>
   );

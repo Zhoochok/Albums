@@ -4,7 +4,6 @@ const FormAddAlbum = require('./FormAddAlbum');
 const AlbumItem = require('./AlbumItem');
 
 module.exports = function Album({ title, album, user, url }) {
-  // console.log(album);
   return (
     <Layout title={title} url={url} user={user} album={album}>
       <div className="center-container">
@@ -12,6 +11,7 @@ module.exports = function Album({ title, album, user, url }) {
       <div className="albumPage">
         {album.map((el) => (
           <AlbumItem el={el} />
+          
         ))}
       </div>
       </div>

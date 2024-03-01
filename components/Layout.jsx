@@ -14,13 +14,15 @@ function Layout({ title, children, user, url, showNavbar = true }) {
         <script defer src="/scripts/addBtnAlbum.js" />
         <script defer src="/scripts/addBtnPhoto.js" />
 
-        
         <link rel="stylesheet" href="/css/style.css" />
-
-        
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        {/* <link rel="stylesheet" href="/css/bootstrap.min.css" /> */}
       </head>
       <body>
-      {showNavbar && <Navbar user={user} url={url} />}
+        {showNavbar && <Navbar user={user} url={url} />}
         {/* наши страницы */}
         {children}
       </body>
