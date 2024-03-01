@@ -39,7 +39,7 @@ if (deletePhoto) {
     if (event.target.classList.contains('btn-delete')) {
       const card = event.target.closest('.card');
       const { id } = card.dataset;
-      console.log(id);
+     // console.log(id);
       const res = await fetch(`/api/photos/${id}`, { method: 'DELETE' });
       const data = await res.json();
 
