@@ -6,8 +6,12 @@ html {
     rgba(148, 187, 233, 1) 100%
   );
 }
-.text{
-  
+.textStr {
+  /* text-align: center; */
+  font-size: 33px;
+  color: #cc4343;
+  /* margin-bottom: 2rem;
+  margin-top: 11rem;   */
 }
 .albums {
   width: 500px;

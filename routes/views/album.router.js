@@ -6,7 +6,8 @@ const PhotoPage = require('../../components/PhotoPage');
 router.get('/', async (req, res) => {
   try {
     const { baseUrl } = req;
-    const album = await Album.findAll();
+    const album = await Album.findAll({ where: { private: true } });
+    // const privateAlbums = await Album.findAll({ where: { private: false } });
     const html = res.renderComponent(AlbumPage, {
       album,
       title: 'Albums',
@@ -26,7 +27,7 @@ router.get('/:id/photo', async (req, res) => {
     const html = res.renderComponent(PhotoPage, {
       album,
       photos,
-      title: `Ur's photo <3`,
+      title: "Ur's photo <3",
     });
     res.status(200).send(html);
   } catch ({ message }) {
