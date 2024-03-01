@@ -183,7 +183,13 @@ body {
 .link_wrapper {
   position: relative;
 }
+.zdorovo {
+  transition: transform 0.3s ease-in-out;
+}
 
+.zdorovo:hover {
+  transform: scale(1.2);
+}
 .btn-addAlbum,
 .btn-addPhoto {
   display: block;
