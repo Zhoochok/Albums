@@ -4,9 +4,14 @@ const deletePhoto = document.querySelector('.photoItem');
 if (formAddPhoto) {
   formAddPhoto.addEventListener('submit', async (event) => {
     // останавляем стандартное поведение формы
-
     event.preventDefault();
     const { description, img } = event.target;
+
+    const formData = new FormData();
+
+    formData.append('img', img.files[0]);
+    formData.append('description', description.value);
+
     const { id } = event.target.dataset;
     const data = {
       description: description.value,
@@ -16,9 +21,9 @@ if (formAddPhoto) {
     const response = await fetch(`/api/photos/add/${id}`, {
       method: 'POST',
       // здесь мы с вами говорим o том, как общаемся, JSON
-      headers: { 'Content-type': 'application/json' },
+      // headers: { 'Content-type': 'application/json' },
       // положили все в одну коробчку, которая скрыта от глаз посторонних пользователей
-      body: JSON.stringify(data),
+      body: formData,
     });
     // обрабатываем наш ответ и приводим к obj
     const res = await response.json();
