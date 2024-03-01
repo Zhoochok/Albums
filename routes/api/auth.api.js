@@ -1,12 +1,11 @@
-const { User } = require('../../db/models');
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
+const { User } = require('../../db/models');
 const generateTokens = require('../../utils/authUtils');
 
 router.post('/registration', async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    // console.log(req.body);
     let user;
     user = await User.findOne({ where: { email } });
     if (user) {
@@ -46,14 +45,11 @@ router.post('/authorization', async (req, res) => {
       return;
     }
     const isSame = await bcrypt.compare(password, user.password);
-    // console.log(isSame)
     if (!isSame) {
       res.json({ message: 'Такого пользователя нет или пароль неверный' });
       return;
     }
     const { accessToken, refreshToken } = generateTokens({ user });
-
-    // устанавливаем куки
     res
       .cookie('access', accessToken)
       .cookie('refresh', refreshToken)
