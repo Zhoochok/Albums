@@ -5,17 +5,7 @@ if (regForm) {
   regForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const { name, email, password, cpassword } = e.target;
-    // console.log(name.value, email);
-    if (
-      name.value.trim() === '' ||
-      email.value.trim() === '' ||
-      password.value.trim() === '' || 
-      cpassword.value.trim() === '' ||){
-      alert('Заполните все поля!');
-      return
-    }
-   if (password.value !== cpassword.value) {alert('пароли не совпадают');}
-   
+    if (password.value === cpassword.value) {
       const user = {
         name: name.value,
         email: email.value,
@@ -26,12 +16,15 @@ if (regForm) {
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify(user),
       });
+
       const data = await res.json();
+
       if (data.message === 'success') {
         window.location.assign('/');
         return;
       }
-    
+    }
+    alert('пароли не совпадают');
   });
 }
 
