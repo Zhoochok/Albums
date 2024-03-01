@@ -11,7 +11,6 @@ router.get('/registration', async (req, res) => {
   }
 });
 
-//страница авторизации
 router.get('/authorization', async (req, res) => {
   try {
     const html = res.renderComponent(AuthorizationPage, { title: 'LOGA' });
