@@ -6,38 +6,100 @@ html {
     rgba(148, 187, 233, 1) 100%
   );
 }
+.text{
+  
+}
+.albums {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  float: left;
+  margin-right: 30px;
+}
+.album-form {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
 
+/* Стиль для полей ввода */
+.input[type='text'],
+.input[type='password'],
+.input[type='email'] {
+  width: 70%;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Стиль для фокуса на полях ввода */
+.input[type='text']:focus,
+.input[type='password']:focus,
+.input[type='email']:focus {
+  border-color: #4caf50;
+}
+.select {
+  width: 70%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  color: #333;
+  appearance: none; /* Удаление стандартного стиля браузера */
+  -webkit-appearance: none; /* Для Safari и Chrome */
+  -moz-appearance: none; /* Для Firefox */
+  -ms-appearance: none; /* Для Internet Explorer */
+}
+
+/* Стиль для опций внутри select */
+.select option {
+  padding: 5px;
+}
+
+/* Стиль для фокуса на элементе select */
+.select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
 .center-container {
   background-color: rgba(240, 217, 217, 0.336);
   padding: 3rem;
   margin-left: 9rem;
   margin-right: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*кнопки добавления*/
-.album-form {
-  display: none;
-}
 
 .photo-form {
-
-  display: block; 
-  opacity: 0; 
-  transition: opacity 1s ease; 
+  display: block;
+  opacity: 0;
+  transition: opacity 2s ease;
 }
 
 .album-form.active {
-  opacity: 1; 
+  display: block;
+  opacity: 1;
 }
 
-.album-form {
-  display: block; 
-  opacity: 0; 
-  transition: opacity 1s ease; 
-}
+/* .album-form {
+ 
+} */
 
 .photo-form.active {
-  opacity: 1; 
+  opacity: 1;
 }
 
 /*404*/
@@ -161,7 +223,7 @@ body {
   width: 200px;
   border: 3px solid rgba(240, 217, 217, 0.336);
   background: transparent;
-  color: #ffffff
+  color: #ffffff;
 }
 
 .btn-addAlbum:hover + .icon {
@@ -184,19 +246,26 @@ body {
 	font-family:Arial, Helvetica, sans-serif;
 	color:#FFF;
      } */
-
+body {
+  padding: 0;
+  margin: 0;
+}
 .menu-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #cc4343;
   height: 50px;
   line-height: 50px;
-  position: relative;
-  width: 1000px;
-  margin: auto;
-  margin-top: 80px;
+  position: fixed;
+  width: 100%;
+  /* height: 70px; */
+  /* margin: auto; */
 }
 
 .menu-wrap ul {
   list-style: none;
+  align-items: center;
 }
 
 .menu-wrap ul li a {
@@ -207,6 +276,7 @@ body {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
+  align-items: center;
 }
 
 .menu-wrap ul li a:hover {
@@ -239,6 +309,8 @@ body {
 .menu-wrap ul ul li a:hover {
   color: #fff;
 }
-.ulka{
+.ulka {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }

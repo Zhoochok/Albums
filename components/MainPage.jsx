@@ -6,8 +6,7 @@ function MainPage({ title, user, album }) {
     <Layout title={title} user={user} album={album}>
       <div className="center-container">
         <h1 className="animate__animated animate__swing">
-          WELCOME
-          {user.name}
+          WELCOME {user && user.name}!
         </h1>
       </div>
     </Layout>

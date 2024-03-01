@@ -5,7 +5,7 @@ function Navbar({ user, url }) {
     <nav className="menu-wrap">
       <ul className="ulka">
         <li>
-          <a href="/">MainPage</a>
+          <a href="/">Main page</a>
         </li>
         <li>
           <a href="/albums">Albums</a>
