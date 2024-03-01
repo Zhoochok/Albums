@@ -15,8 +15,24 @@ background: linear-gradient(77deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
   display: none; 
 }
 
-.photo-form{
-  display:none;
+.photo-form {
+  display: block; 
+  opacity: 0; 
+  transition: opacity 1s ease; 
+}
+
+.album-form.active {
+  opacity: 1; 
+}
+
+.album-form {
+  display: block; 
+  opacity: 0; 
+  transition: opacity 1s ease; 
+}
+
+.photo-form.active {
+  opacity: 1; 
 }
 
 
