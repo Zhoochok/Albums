@@ -3,8 +3,6 @@ const router = require('express').Router();
 const AlbumItem = require('../../components/AlbumItem');
 const { Album } = require('../../db/models');
 
-// const AlbumItem = require('../../components/AlbumPage');
-
 router.post('/', async (req, res) => {
   try {
     const { img, name, privats } = req.body;

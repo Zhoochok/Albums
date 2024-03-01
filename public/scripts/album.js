@@ -15,7 +15,6 @@ if (formAddAlbum) {
       body: JSON.stringify(data),
     });
     const res = await response.json();
-    // console.log(res);
     if (res.message === 'success') {
       formAddAlbum.reset();
       document
