@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
       title: 'Albums',
       url: baseUrl,
     });
-
     res.status(200).send(html);
   } catch ({ message }) {
     res.send(message);

@@ -20,7 +20,7 @@ if (formAddAlbum) {
       formAddAlbum.reset();
       document
         .querySelector(".albumPage")
-        .insertAdjacentHTML("beforeend", res.html);
+        .insertAdjacentHTML('beforebegin', res.html);
     }
   });
 }

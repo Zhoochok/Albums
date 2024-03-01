@@ -9,7 +9,7 @@ module.exports = function AlbumItem({ title, album, user, url, el }) {
         </p>
         {el.name}
       </a>
-      <button className="btn-deleteAlbum">Удалить</button>
+     {user && el.userId === user.id && <button className="btn-deleteAlbum">Удалить</button>}
     </div>
   );
 };
