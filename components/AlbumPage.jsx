@@ -11,6 +11,7 @@ module.exports = function Album({ title, album, user, url }) {
       <div className="albumPage">
         {album.map((el) => (
           <AlbumItem el={el} />
+          
         ))}
       </div>
       </div>

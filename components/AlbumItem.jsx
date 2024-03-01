@@ -1,16 +1,15 @@
-const React = require('react');
-const Layout = require('./Layout');
-const FormAddAlbum = require('./FormAddAlbum');
+const React = require("react");
 
 module.exports = function AlbumItem({ title, album, user, url, el }) {
   return (
-    <a href={`/albums/${el.id}/photo`}>
-      <div className="albums">
+    <div className="albums" data-albumId={el.id}>
+      <a href={`/albums/${el.id}/photo`}>
         <p>
           <img className="picture" src={el.img} />
         </p>
         {el.name}
-      </div>
-    </a>
+      </a>
+      <button className="btn-deleteAlbum">Удалить</button>
+    </div>
   );
 };
