@@ -7,9 +7,15 @@ function Navbar({ user, url }) {
         <li>
           <a href="/">Main page</a>
         </li>
-        <li>
-          <a href="/albums">Albums</a>
-        </li>
+        {!user ? (
+          <li>
+            <a href="/auth/registration">Sign-up</a>
+          </li>
+        ) : (
+          <li>
+            <a href="/albums">Albums</a>
+          </li>
+        )}
         {user ? (
           <>
             <li>
@@ -29,14 +35,9 @@ function Navbar({ user, url }) {
             </li>
           </>
         ) : (
-          <>
-            <li>
-              <a href="/auth/registration">Sign-up</a>
-            </li>
-            <li>
-              <a href="/auth/authorization">Sign-in</a>
-            </li>
-          </>
+          <li>
+            <a href="/auth/authorization">Sign-in</a>
+          </li>
         )}
       </ul>
     </nav>

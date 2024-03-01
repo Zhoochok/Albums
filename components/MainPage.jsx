@@ -8,6 +8,7 @@ function MainPage({ title, user, album }) {
         <h1 className="animate__animated animate__swing">
           WELCOME {user && user.name}!
         </h1>
+        {/* <h5 className="animate__animated animate__bounce">Нельзя пользоваться сервисом не зарегистрированным пользователям</h5> */}
       </div>
     </Layout>
   );
