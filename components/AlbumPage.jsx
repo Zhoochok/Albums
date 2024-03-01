@@ -9,11 +9,11 @@ module.exports = function Album({ title, album, user, url }) {
       <div className="center-container">
         {user && <FormAddAlbum />}
         <div className="MyAlbum">
+            <p>My albums</p>
           <div className="albumPage">
-            <p>Мой альбом</p>
             {album.map((el) => el.userId === user.id && <AlbumItem key={el.id} el={el} user={user} />)}
             <div>
-            <p>Чужие</p>
+            <p>Others</p>
             {album.map((el) => el.userId !== user.id && <AlbumItem key={el.id} el={el} user={user} />)}
           </div>
           </div>
