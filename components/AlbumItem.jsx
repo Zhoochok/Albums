@@ -1,7 +1,6 @@
 const React = require("react");
 
 module.exports = function AlbumItem({ title, album, user, url, el }) {
-  console.log(album, 111);
   return (
     <div className="albums" data-albumId={el.id}>
       <a href={`/albums/${el.id}/photo`}>

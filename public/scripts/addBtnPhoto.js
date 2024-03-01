@@ -4,3 +4,4 @@ const nediv = document.querySelector('.photo-form');
 nebutton.onclick = () => {
   nediv.classList.toggle('active');
 };
+
